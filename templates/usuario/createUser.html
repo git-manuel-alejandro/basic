@@ -1,0 +1,14 @@
+{% extends 'home.html'%}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container py-3">  
+    <form action="" class="form-control" method="post">{% csrf_token %}
+        {{ form |crispy }}
+        <br>
+        <button type="submit" class="btn btn-info btn-block">Enviar</button>
+    </form>
+   
+ </div>
+
+{% endblock %}

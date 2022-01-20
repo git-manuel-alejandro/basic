@@ -1,7 +1,7 @@
 {% extends 'home.html'%}
 
 {% block content %}
-<div class="container py-3">
+<div class="container py-3">  
     <h2 class="text-center">Lista de usuarios</h2>
     <table class="table">
         <thead>
@@ -9,15 +9,18 @@
             <th scope="col">Id</th>
             <th scope="col">Usuario</th>
             <th scope="col">Profesion</th>
-            <th scope="col">Ciudad</th>
+            <th scope="col">Imagen</th>
           </tr>
         </thead>
         <tbody>
+          {% for u in usuarios %}
           <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <th scope="row">{{ u.id }}</th>
+            <td>{{ u.nombre }}</td>
+            <td>{{ u.profesion }}</td>
+            <td><img src="{{u.photo.url}}" width="40" height="40" style="border-radius: 50px;"alt=""></td>
+          </tr>
+          {% endfor %}
         </tbody>
       </table>
  </div>
